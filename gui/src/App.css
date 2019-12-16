@@ -1,0 +1,84 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+table {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  /* *border-collapse: collapse; IE7 and lower */
+    border-spacing: 0; 
+}
+
+table td, table th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+th:only-child{
+  border-radius: 6px 6px 0 0;
+}
+
+table thead {
+  background: #686868;
+  background: -moz-linear-gradient(top, #8e8e8e 0%, #777777 66%, #686868 100%);
+  background: -webkit-linear-gradient(top, #8e8e8e 0%, #777777 66%, #686868 100%);
+  background: linear-gradient(to bottom, #8e8e8e 0%, #777777 66%, #686868 100%);
+  border-bottom: 2px solid #444444;
+}
+
+table tr:nth-child(even) {
+  background: rgb(72, 156, 230);
+}
+
+.column {
+  /* width: 75%; */
+  padding: 10px;
+  float:right;
+}
+
+.right{
+  width:75%
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "node_backend",
+  "version": "1.0.0",
+  "description": "Node backend for interview base with RevTera Task 1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryan N.",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.14.0",
+    "express-validator": "^3.1.2"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security"
+  }
+}
