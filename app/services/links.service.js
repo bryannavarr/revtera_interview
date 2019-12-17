@@ -1,11 +1,11 @@
 // const Hacker = require('../models/hacker')
 const fs = require("fs")
+const stringify = require('json-stringify-safe')
 
 module.exports = {
     readAll: readAll,
-    readAsIs: readAsIs
-    // readById: readById,
-    // create: create,
+    readAsIs: readAsIs,
+    create: create,
     // update: update,
     // delete: _delete
 }
@@ -31,6 +31,15 @@ function readAsIs() {
 
 
         })
+    })
+}
+
+function create(model) {
+    return new Promise(function (resolve, reject) {
+        fs.writeFile(__dirname + '/records.json', JSON.stringify(model, undefined, 4), function (err) {
+            console.log("File save successful !!!:::::::::")
+            err ? reject(err) : resolve("SUCCESS")
+        });
     })
 }
 

@@ -27,6 +27,17 @@ export function readAsIs() {
         .catch(responseErrorHandler)
 }
 
+export function create(linkData) {
+    const config = {
+        method: "POST",
+        headers,
+        data:linkData
+    }
+
+    return axios(baseUrl, config).then(responseSuccessHandler).catch(responseErrorHandler)
+
+}
+
 
 const responseSuccessHandler = response => {
     return response.data;

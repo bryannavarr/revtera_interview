@@ -3,17 +3,19 @@ import * as linkService from "../services/link.service";
 import JsonView from "./JsonView"
 
 class LinkList extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
         this.state = {
             linkList: [],
             isJsonView: false,
-            isListView: true
+            isListView: true,
+            viewBtnClicked: false
 
         };
 
         this.showJson = this.showJson.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -41,7 +43,31 @@ class LinkList extends React.Component {
         }).catch(err => console.log(err))
     }
 
+    onSubmit(updatedJson) {
+        console.log("updatedJson: " + JSON.stringify(updatedJson))
+        const data = updatedJson._data.records[0].nodes
+        const trimList = data.map(function (field) {
+            // console.log("Field: " + field[1])
+            const name = field.fullname.split("/")[2] + "/";
+            // console.log(name)
+            const url = field.fullname.split("com/")[1]
+            return (
+                {
+                    // id: field.id,
+                    size: field.size,
+                    name: name,
+                    url: url,
+                    type: field.type
+                }
+            )
+        })
+        // this.setState(prevState => ({ linkList: prevState.linkList.concat(updatedJson) }))
+        this.setState({ linkList: trimList })
+    }
+
+
     showJson() {
+        this.setState(prevState => ({ viewBtnClicked: !prevState.viewBtnClicked }))
         this.setState(prevState => ({ isListView: !prevState.isListView }))
         // this.setState({ isListView: false })
 
@@ -66,23 +92,31 @@ class LinkList extends React.Component {
         return (
             <div className="row">
                 <div className="column right">
-                    <h2>Web Browser Detail</h2>
-                    <button onClick={this.showJson} className="jsonBtn">Tree View</button>
+                    <div>
+                        <h2>Web Browser Detail</h2>
+                        <div className="btnGroup">
+                            <button type="button" onClick={this.showJson} className="jsonBtn">{`${this.state.viewBtnClicked ? "List View" : "Tree View"}`}</button>
+                        </div>
+
+
+                    </div>
+
 
                     {this.state.isListView ?
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>URL</td>
-                                    <td>Size</td>
-                                    <td>Type</td>
-                                </tr>
-                            </thead>
-                            <tbody>{links}</tbody>
-                        </table> :
+                        <div className="tableDiv">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>URL</td>
+                                        <td>Size</td>
+                                        <td>Type</td>
+                                    </tr>
+                                </thead>
+                                <tbody>{links}</tbody>
+                            </table></div> :
 
-                        <JsonView />
+                        <JsonView onSubmit={this.onSubmit} listJson={this.state.listJson} linkData={this.state.linkData} />
 
                     }
 

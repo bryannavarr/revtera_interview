@@ -4,9 +4,9 @@ const apiPrefix = '/api/links';
 
 module.exports = {
     readAll: readAll,
-    readAsIs: readAsIs
+    readAsIs: readAsIs,
     // readById: readById,
-    // create: create,
+    create: create,
     // update: update,
     // delete: _delete
 }
@@ -39,3 +39,18 @@ function readAsIs(req, res) {
     })
 }
 
+function create(req, res) {
+    // console.log("req.model " + req.body)
+    linksService.create(req.body)
+        .then(message => {
+            const responseModel = new responses.ItemResponse()
+            responseModel.item = message
+            res.status(201)
+                .location(`${apiPrefix}`)
+                .json(responseModel)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).send(new responses.ErrorResponse(err))
+        })
+}

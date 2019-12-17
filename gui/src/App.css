@@ -1,5 +1,26 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+/* .tableDiv {
+  margin-top: 5vh;
+} */
+
+.btnGroup {
+  display: inline-block;
+  margin-left:65vh;
+}
+
+textarea {
+  height:150vh;
+  /* width:100%; */
+  width: 100%;
+  margin:0 auto auto -33vh;
+  border-collapse:separate;
+/* border:solid black 1px; */
+border-radius:6px;
+-moz-border-radius:6px;
+font-size: 1em;
 }
 
 table {
@@ -40,6 +61,57 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
   border-radius: 0 0 0 4px;
 }
 
+h2 {
+     font-size: 29px;
+    font-weight: lighter;
+    display: inline-block;
+    /* font-family:'Open Sans', sans-serif; */
+    margin:0;
+    margin-right: 42px;
+}
+
+.submitBtn{
+  /* float:right; */
+  position: absolute;
+/* right:    1 ; */
+margin-top:-2.31em;
+margin-left: -4.75em;
+margin-bottom: 2em; 
+/* top:10; */
+/* left:0  ; */
+/* bottom:   0; */
+}
+
+button {
+  /* position:absolute; */
+  /* right:0; */
+  /* float:right; */
+
+  margin: 0 0.1vh;  
+  /* margin-bottom: 0.5vh; */
+  display:inline-block;
+
+  font-size: 0.8em;
+  /* font-family: sans-serif; */
+  color:#333;
+    text-shadow:1px 1px #fff;
+    text-decoration: none;
+    text-align:center;
+    display:inline-block; 
+    /* padding:0.5em 1.75em 0.5em 1em; */
+    border-radius: 0.25em;
+    background: #f8f8f8;
+    border:1px solid #ccc;
+  /* blue stripe */
+    position: relative;
+    /* margin:0 0 1px;  */
+  margin:auto ;
+}
+
+  /* button .submitBtn {
+  margin-top: 5vh;
+  } */
+
 .quitBtn{
   float: right;
   
@@ -62,14 +134,6 @@ thead td {
 
 
 
-
-
-
-
-
-
-
-
 .column {
   /* width: 75%; */
   padding: 10px;
@@ -77,8 +141,11 @@ thead td {
 }
 
 .right{
-  width:75%
+  width:75%;
+  /* position:absolute; */
+
 }
+
 
 .row:after {
   content: "";
