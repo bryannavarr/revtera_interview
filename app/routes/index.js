@@ -5,6 +5,7 @@ const clientRoutes = require("./clients.routes");
 module.exports = router;
 
 router.use('/api/links', linksRoutes)
+// router.use('/api/recordsJson', linksRoutes)
 
 
 

@@ -2,70 +2,73 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 table {
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-  /* *border-collapse: collapse; IE7 and lower */
-    border-spacing: 0; 
+  width:100%;
+  background: #f6f6f6;
+  font-size: 14px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 10px hsla(0,0%,0%,.05),
+                      0 0 200px hsla(0,0%,100%,.5);
+     -moz-box-shadow: 0 0 10px hsla(0,0%,0%,.05),
+                      0 0 200px hsla(0,0%,100%,.5);
+          box-shadow: 0 0 10px hsla(0,0%,0%,.05),
+                      0 0 200px hsla(0,0%,100%,.5);
+text-align:left;
+border-collapse:separate;
+/* border:solid black 1px; */
+border-radius:6px;
+-moz-border-radius:6px;
 }
 
-table td, table th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
+thead{
+  background-color: #f9f9f9;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0,0%,0%,0)), to(hsla(0,0%,0%,.1)));
+  background-image: -webkit-linear-gradient(top, hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+  background-image:    -moz-linear-gradient(top, hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+  background-image:     -ms-linear-gradient(top, hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+  background-image:      -o-linear-gradient(top, hsla(0,0%,0%,0), hsla(0,0%,0%,.1));
+  /* border: 1px solid #ccc; */
+  /* border-bottom: 2px solid #ccc;
+  font-weight: bold;
+  text-shadow: 0 1px 1px hsla(0,0%,100%,.75); */
 }
 
-th:first-child {
-  border-radius: 6px 0 0 0;
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+  border-radius: 4px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+  border-radius: 0 0 0 4px;
 }
 
-th:last-child {
-  border-radius: 0 6px 0 0;
+.quitBtn{
+  float: right;
+  
 }
 
-th:only-child{
-  border-radius: 6px 6px 0 0;
+td {
+  /* border: 0.02px solid #ccc; */
+  color: #777;
+  padding: 3px;
 }
 
-table thead {
-  background: #686868;
-  background: -moz-linear-gradient(top, #8e8e8e 0%, #777777 66%, #686868 100%);
-  background: -webkit-linear-gradient(top, #8e8e8e 0%, #777777 66%, #686868 100%);
-  background: linear-gradient(to bottom, #8e8e8e 0%, #777777 66%, #686868 100%);
-  border-bottom: 2px solid #444444;
+tr:nth-child(2n) {  
+  background: #eee;  
 }
 
-table tr:nth-child(even) {
-  background: rgb(72, 156, 230);
+thead td {
+  border: none;
+  color: #444;
 }
+
+
+
+
+
+
+
+
+
+
 
 .column {
   /* width: 75%; */

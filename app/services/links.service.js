@@ -3,6 +3,7 @@ const fs = require("fs")
 
 module.exports = {
     readAll: readAll,
+    readAsIs: readAsIs
     // readById: readById,
     // create: create,
     // update: update,
@@ -10,22 +11,27 @@ module.exports = {
 }
 
 function readAll() {
-    // let links;
-
-
     return new Promise(function (resolve, reject) {
         fs.readFile(__dirname + '/records.json', (err, data) => {
             err ? reject(err) : resolve(JSON.parse(data))
+            // console.log("Json data, no parsing: " + data)
+            // err ? reject(err) : resolve(data)
             // let links = JSON.parse(data);
             // console.log(links);
             // return links
         })
     })
+}
+
+function readAsIs() {
+    return new Promise(function (resolve, reject) {
+        fs.readFile(__dirname + '/records.json', (err, data) => {
+            console.log("Json Data, no parsing : " + data)
+            err ? reject(err) : resolve(data)
 
 
-
-
-
+        })
+    })
 }
 
 // var readFilePromise = function (file) {

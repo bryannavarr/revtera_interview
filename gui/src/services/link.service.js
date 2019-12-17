@@ -3,6 +3,7 @@ import axios from "axios";
 const headers = {};
 
 const baseUrl = `http://localhost:8080/api/links`;
+// const jsonUrl = `http://localhost:8080/api/recordsJson`;
 
 export function readAll() {
     const config = {
@@ -13,6 +14,17 @@ export function readAll() {
     return axios(baseUrl, config)
         .then(responseSuccessHandler)
         .catch(responseErrorHandler);
+}
+
+export function readAsIs() {
+    const config = {
+        method: "GET",
+        headers
+    }
+
+    return axios(baseUrl, config)
+        .then(responseSuccessHandler)
+        .catch(responseErrorHandler)
 }
 
 
