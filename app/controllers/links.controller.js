@@ -3,54 +3,54 @@ const linksService = require('../services/links.service');
 const apiPrefix = '/api/links';
 
 module.exports = {
-    readAll: readAll,
-    readAsIs: readAsIs,
-    // readById: readById,
-    create: create,
-    // update: update,
-    // delete: _delete
+  readAll: readAll,
+  readAsIs: readAsIs,
+  // readById: readById,
+  create: create,
+  // update: update,
+  // delete: _delete
 }
 
 function readAll(req, res) {
-    // console.log("Inside readall();")
-    linksService.readAll().then(links => {
-        // const parsedLinks = JSON.pa
-        // console.log("Response from server as is: " + links)
-        // console.log("response from server: " + JSON.stringify(links))
-        const responseModel = new responses.ItemsResponse()
-        responseModel.items = links
+  // console.log("Inside readall();")
+  linksService.readAll().then(links => {
+    // const parsedLinks = JSON.pa
+    // console.log("Response from server as is: " + links)
+    // console.log("response from server: " + JSON.stringify(links))
+    const responseModel = new responses.ItemsResponse()
+    responseModel.items = links
 
-        res.json(responseModel)
-    })
-        .catch(err => {
-            console.log(err)
-            res.status(500).send(new responses.ErrorResponse(err))
-        });
+    res.json(responseModel)
+  })
+    .catch(err => {
+      console.log(err)
+      res.status(500).send(new responses.ErrorResponse(err))
+    });
 }
 
 function readAsIs(req, res) {
-    linksService.readAsIs().then(json => {
-        const responseModel = new responses.ItemsResponse()
-        responseModel.items = json
-        res.json(responseModel)
-    }).catch(err => {
-        console.log(err)
-        res.status(500).send(new responses.ErrorResponse(err))
-    })
+  linksService.readAsIs().then(json => {
+    const responseModel = new responses.ItemsResponse()
+    responseModel.items = json
+    res.json(responseModel)
+  }).catch(err => {
+    console.log(err)
+    res.status(500).send(new responses.ErrorResponse(err))
+  })
 }
 
 function create(req, res) {
-    // console.log("req.model " + req.body)
-    linksService.create(req.body)
-        .then(message => {
-            const responseModel = new responses.ItemResponse()
-            responseModel.item = message
-            res.status(201)
-                .location(`${apiPrefix}`)
-                .json(responseModel)
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(500).send(new responses.ErrorResponse(err))
-        })
+  // console.log("req.model " + req.body)
+  linksService.create(req.body)
+    .then(message => {
+      const responseModel = new responses.ItemResponse()
+      responseModel.item = message
+      res.status(201)
+        .location(`${apiPrefix}`)
+        .json(responseModel)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).send(new responses.ErrorResponse(err))
+    })
 }

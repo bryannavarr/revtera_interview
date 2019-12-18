@@ -3,44 +3,44 @@ const fs = require("fs")
 const stringify = require('json-stringify-safe')
 
 module.exports = {
-    readAll: readAll,
-    readAsIs: readAsIs,
-    create: create,
-    // update: update,
-    // delete: _delete
+  readAll: readAll,
+  readAsIs: readAsIs,
+  create: create,
+  // update: update,
+  // delete: _delete
 }
 
 function readAll() {
-    return new Promise(function (resolve, reject) {
-        fs.readFile(__dirname + '/records.json', (err, data) => {
-            err ? reject(err) : resolve(JSON.parse(data))
-            // console.log("Json data, no parsing: " + data)
-            // err ? reject(err) : resolve(data)
-            // let links = JSON.parse(data);
-            // console.log(links);
-            // return links
-        })
+  return new Promise(function (resolve, reject) {
+    fs.readFile(__dirname + '/records.json', (err, data) => {
+      err ? reject(err) : resolve(JSON.parse(data))
+      // console.log("Json data, no parsing: " + data)
+      // err ? reject(err) : resolve(data)
+      // let links = JSON.parse(data);
+      // console.log(links);
+      // return links
     })
+  })
 }
 
 function readAsIs() {
-    return new Promise(function (resolve, reject) {
-        fs.readFile(__dirname + '/records.json', (err, data) => {
-            console.log("Json Data, no parsing : " + data)
-            err ? reject(err) : resolve(data)
+  return new Promise(function (resolve, reject) {
+    fs.readFile(__dirname + '/records.json', (err, data) => {
+      console.log("Json Data, no parsing : " + data)
+      err ? reject(err) : resolve(data)
 
 
-        })
     })
+  })
 }
 
 function create(model) {
-    return new Promise(function (resolve, reject) {
-        fs.writeFile(__dirname + '/records.json', JSON.stringify(model, undefined, 4), function (err) {
-            console.log("File save successful !!!:::::::::")
-            err ? reject(err) : resolve("SUCCESS")
-        });
-    })
+  return new Promise(function (resolve, reject) {
+    fs.writeFile(__dirname + '/records.json', JSON.stringify(model, undefined, 4), function (err) {
+      console.log("File save successful !!!:::::::::")
+      err ? reject(err) : resolve("SUCCESS")
+    });
+  })
 }
 
 // var readFilePromise = function (file) {

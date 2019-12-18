@@ -4,12 +4,12 @@ import LinkList from "./LinkList"
 
 
 export default function RightPanel() {
-    return (
-      <div className="rightPanel">
-        <LinkList/>
-        
-  
-      </div>
-    );
-  }
+  return (
+    <div className="rightPanel">
+      <LinkList />
+
+
+    </div>
+  );
+}
 

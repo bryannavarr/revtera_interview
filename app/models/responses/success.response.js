@@ -1,12 +1,12 @@
 const BaseResponse = require('./base.response')
 
 class SuccessResponse extends BaseResponse {
-    
-    constructor() {
-        super()
-        this.isSuccessful = true
-        this.alert.type = 'success'
-    }
+
+  constructor() {
+    super()
+    this.isSuccessful = true
+    this.alert.type = 'success'
+  }
 
 }
 

@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="App">
       <button className="quitBtn">
-      Quit
+        Quit
       </button>
-      <RightPanel/>
-      
+      <RightPanel />
+
 
     </div>
   );
