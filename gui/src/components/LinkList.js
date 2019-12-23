@@ -90,7 +90,7 @@ class LinkList extends React.Component {
           </div>
 
           {this.state.isListView ?
-            <div className="tableDiv">
+            <div className="container">
               <table>
                 <thead>
                   <tr>

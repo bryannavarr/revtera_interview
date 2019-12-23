@@ -1,9 +1,12 @@
 const electron = require('electron');
 const app = electron.app;
+// const _app = electron.remote.app;
 const BrowserWindow = electron.BrowserWindow;
+const { ipcRenderer } = require('electron');
 
 const path = require('path');
 const isDev = require('electron-is-dev');
+// const {ipcRenderer} = require('electron');
 
 let mainWindow;
 
@@ -31,3 +34,11 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+// const app = require('electron').remote.app;
+// const close = document.getElementById('quitBtn');
+// close.on('click', function () {
+//   app.quit();
+// });
+
+
